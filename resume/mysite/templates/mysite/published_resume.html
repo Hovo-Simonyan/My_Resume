@@ -1,0 +1,86 @@
+{% extends 'mysite/base.html' %}
+
+
+{% block content %}
+<div class="mecbloc">
+
+
+    {% include 'mysite/navi.html'%}
+
+    <div class="ajkoxm">
+        {% for resume in resumes %}
+        <div class="right-block__content">
+            <div class="right-block__mej">
+                <div class="right-block__img">
+                    {% if resume.photo %}
+                    <img style="background:url({{ resume.photo.url }}) no-repeat; background-size: cover; background-position:50% 0%;"
+                         class="content-nkar">
+                    {% else %}
+                    <img style="background:url(https://i.ibb.co/B4Lv7Jh/imagess.png) no-repeat; background-size: cover; background-position:50% 0%;"
+                         class="content-nkar">
+                    {% endif %}
+                </div>
+
+                <div class="right-block__nkaragrutyun">
+                    <div class="right-block__bio">
+                        <div class="imya" style="margin-top: 2%;">
+                            <span > <b>Желаемая должность -</b>{{resume.position}}</span>
+                        </div>
+                        <div class="imya">
+                            <span> <b>Имя-</b>{{resume.name}} {{resume.surname}}</span>
+                        </div>
+                        <div class="familya">
+                            <span><b>Город-</b>{{resume.city}}</span>
+                        </div>
+                        <div class="osebe">
+                            <span> <b>O себе-</b>{{ resume.content|truncatewords:40 }}</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="button">
+            <a href="{{ resume.get_absolute_url }}" style="text-decoration: none;">
+                <button class="more">Подробнее...</button>
+            </a>
+        </div>
+        {% endfor %}
+        {% if page_obj.has_other_pages %}
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+
+                {% for p in paginator.page_range %}
+                {% if page_obj.number == p %}
+                <li class="page-item active">{{ p }}</li>
+
+                {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                <li class="page-item"><a class="page-link" href="?page={{ p }}">{{ p }}</a></li>
+                {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+
+
+    </div>
+</div>
+{% endblock %}
+
+

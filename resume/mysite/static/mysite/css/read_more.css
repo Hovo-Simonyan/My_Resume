@@ -1,0 +1,126 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: var(--bs-body-font-family);
+
+}
+
+.block-content{
+    width: 85%;
+    height: 100%;
+    background: green;
+    display: flex;
+    margin: 0 auto;
+    border: 3px solid green;
+    margin-top: 20px;
+
+}
+
+.left-block{
+    width: 28%;
+    height: 100%;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: green;
+}
+
+.right-block{
+    padding:15px;
+
+    width: 72%;
+    background: #249924;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    border-left: 3px solid green;
+
+
+}
+.full_nkar{
+    width: 65%;
+    height: 100%;
+    margin-top: 15%;
+    margin-bottom: 4%;
+}
+
+.full_nkar>img{
+    width: 100%;
+    height: 330px;
+}
+
+.user-name{
+    font-size: 30px;
+
+}
+
+.personal-info{
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.about-user{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding-left: 11%;
+
+}
+
+.position{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+
+
+}
+
+.experience{
+    font-size: 30px;
+    margin-bottom: 5%;
+
+}
+
+.text{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 22px;
+    background: #249924;
+    color: white;
+}
+
+.update{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position:relative;
+    bottom: 18%;
+
+
+}
+
+
+
+.top-block{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;;
+    margin-top: 3%;
+    margin-bottom: 5%;
+
+}
+
+

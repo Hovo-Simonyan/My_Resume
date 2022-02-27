@@ -1,0 +1,21 @@
+{% extends 'mysite/base.html' %}
+
+
+{% block content %}
+
+<div class="block-register block2">
+
+    <form method="post">
+        <h1 class='register-h1'>Авторизация</h1>
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="double">
+            <label><a class="toregister" href="{% url 'register' %}">Зарегистрироваться</a></label>
+            <button type="submit" class="btn btn-lg btn-primary button2" >Войти</button>
+        </div>
+
+
+    </form>
+</div>
+
+{% endblock %}

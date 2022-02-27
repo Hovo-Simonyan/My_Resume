@@ -1,0 +1,162 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.register-h1{
+  margin: 0;
+  font-weight: 100;
+  color: white;
+  letter-spacing: 3px;
+  font-size: 60px;
+  font-family: fantasy;
+  margin-bottom:3%;
+  margin-top:8%;
+}
+
+form{
+  width: 100%;
+  height:100%;
+  background: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius:10px;
+
+}
+
+#id_username{
+  width: 500px;
+  height: 45px;
+  font-size: 20px;
+
+}
+#id_email{
+  width: 500px;
+  height: 45px;
+  font-size: 20px;
+
+}
+#id_password1{
+   width: 500px;
+  height: 45px;
+  font-size: 20px;
+
+}
+#id_password2{
+   width: 500px;
+   height: 45px;
+
+   margin:0;
+   font-size: 20px;
+
+}
+
+label{
+    color:white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.btn.btn-primary {
+    height:60%;
+    width:40%;
+    margin-bottom:2%;
+    color: black;
+    background-color: white;
+    border-color: green;
+    transition:none;
+}
+
+
+
+
+
+.btn{
+    width:100px;
+    height:70px;
+    color:red;
+    transition:none;
+}
+
+.btn.btn-lg.btn-primary{
+    margin-left:34%;
+    width: 24%;
+    height: 6%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background:white;
+    margin-bottom: 9%;
+
+
+}
+
+.double{
+    width:510px;
+    height:15%;
+
+    display:flex;
+    justify-content:start;
+    align-items:center;
+
+}
+
+.btn.btn-lg.btn-primary:hover{
+    transition:1s;
+	border:3px solid white;
+	background: none;
+	color: black;
+	transform: scale(1.1);
+	background: white;
+
+}
+
+#id_password{
+   width: 500px;
+  height: 45px;
+  font-size: 20px;
+}
+
+.btn.btn-lg.btn-primary.button2{
+
+    width: 270px;
+    height:45%;
+    margin-bottom:3%;
+    margin-top:2%;
+
+}
+
+.block-register.block2 {
+    width: 95%;
+    height:600px;
+    margin:0 auto;
+    margin-top:5%;
+
+}
+
+.toregister{
+    color:white;
+    text-decoration: none;
+    margin-left:10px;
+}
+
+.toregister:hover{
+    color:#f5f2f2;
+}
+
+form {
+    margin: 3% auto 1% auto;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    background: green;
+    box-shadow: 5px 5px 15px 3px green;
+}
+

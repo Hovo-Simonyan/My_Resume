@@ -1,0 +1,104 @@
+{% extends 'mysite/base.html' %}
+
+{% block content %}
+
+<div class="block-content">
+    <div class="left-block">
+
+        <div class="full_nkar">
+            {% if resume.photo %}
+            <img style="background:url({{ resume.photo.url }}) no-repeat; background-size: cover; background-position:50% 0%;"
+                 class="content-nkar">
+            {% else %}
+            <img style="background:url(https://i.ibb.co/B4Lv7Jh/imagess.png) no-repeat; background-size: cover; background-position:50% 0%;"
+                 class="content-nkar">
+            {% endif %}
+
+        </div>
+        <span class="personal-info">Личная информация</span>
+        <hr style="width: 80%; height: 5px; margin: 0; margin-bottom: 25px;">
+        <div class="about-user">
+            <span class="user-name" style="font-size: 25px;"><span
+                    style="font-size: 16px;">Имя</span> - {{ resume.name }} {{ resume.surname }}</span>
+            <span class="user-name"><span style="font-size: 16px;">Возрасть</span> - {{ resume.age }}</span>
+            <span class="user-name"><span style="font-size: 16px;">Место проживания</span> - {{ resume.city }}</span>
+
+        </div>
+
+        <span class="personal-info">Контакты</span>
+        <hr style="width: 80%; height: 5px; margin: 0; margin-bottom: 25px;">
+        <div class="about-user">
+
+            {% if resume.phone_number %}
+            <span class="user-name" style="font-size: 25px;">
+                <span style="font-size: 16px;">Телефон</span> - {{ resume.phone_number }}</span>
+            {% else %}
+            <span class="user-name" style="font-size: 25px;">
+                <span style="font-size: 16px;">Телефон</span> - не указано</span>
+            {% endif %}
+
+            {% if resume.facebook %}
+            <span class="user-name"><span style="font-size: 16px;">Facebook</span> - <a
+                    href="{{ resume.facebook }}" target="_blank"><i class="fab fa-facebook-square"
+                                                                    style="color: white;"></i></a></span>
+
+            {% endif %}
+
+
+            {% if resume.telegram %}
+            <span class="user-name" style="font-size: 25px;"><span
+                    style="font-size: 16px;">Телеграм</span> - {{ resume.telegram }}</span>
+            {% else %}
+            <span class="user-name" style="font-size: 25px;"><span
+                    style="font-size: 16px;">Телеграм</span> - не указано</span>
+            {% endif %}
+
+            <span class="user-name" style="font-size: 25px;"><span style="font-size: 16px;">Email</span> - {{ resume.email }}</span>
+
+        </div>
+        <hr style="width: 80%; height: 5px; margin: 0; margin-bottom: 20px; margin-top: 10px;">
+
+    </div>
+
+    <div class="right-block">
+        <div class="top-block">
+            <div class="div">
+                {% if request.user == resume.user %}
+                <span style="font-size:20px; color:white;">Просмотрено`</span><br>
+                <span style="color: white; font-size:25px; padding-left:30px;">{{ resume.view }} раз</span>
+                {% endif %}
+            </div>
+
+            <span class="position">
+            {{ resume.position }}
+            </span>
+
+            {% if request.user == resume.user %}
+
+                <div class="update">
+
+                <a href="{% url 'update-resume' resume.pk %}">
+                    <i style="font-size:30px; color:white; margin-right: 10px; margin-bottom: 10px;"
+                       class="fas fa-user-edit"></i>
+                </a>
+                <a href="{% url 'delete-resume' resume.pk %}">
+                    <i class="fas fa-user-times" style="font-size:30px; color: white;">
+                    </i></a>
+                </div>
+            {% endif %}
+
+        </div>
+
+
+        <span style="font-size: 25px; color: white;">Опыт работы:</span>
+        <hr style="width: 80%; height: 5px; margin: 0; margin-bottom: 20px; margin-top: 10px; color: white;">
+        <div class="text">
+            {{ resume.content|safe }}
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}

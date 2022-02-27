@@ -1,0 +1,42 @@
+{% load mysite_tags %}
+
+
+{% get_languages as languages %}
+<div class="dzaxsyun">
+    {% if xz == 'Selected' %}
+        <span class="yaziki">Все языки</span>
+
+    {% else %}
+        <span class="yaziki"><a href="{% url 'published_resume' %}">Все языки</a></span>
+
+    {% endif %}
+    {% if selected_my == 'True' %}
+        {% if is_there == 'True' %}
+            <span class="java">Мои резюме</span>
+            <hr class="gic">
+        {% endif %}
+    {% else %}
+        {% if is_there == 'True' %}
+            <span class="java" ><a href="{% url 'user_posts' %}">Мои резюме</a></span>
+            <hr class="gic">
+        {% endif %}
+
+    {% endif %}
+
+
+
+    {% for language in languages %}
+
+        {{ language.count }}
+        {% if language.slug == select %}
+            <span class="java">{{language.name}}
+                    <img class="logo-l" src="{{ language.photo_language.url}}" width="35px" height="35px"></span>
+            <hr class="gic">
+        {% else %}
+            <span class="java"><a href="{{ language.get_absolute_url }}">{{language.name}}
+                    <img class="logo-l" src="{{ language.photo_language.url}}" width="35px" height="35px"></a></span>
+            <hr class="gic">
+        {% endif %}
+    {% endfor %}
+
+</div>

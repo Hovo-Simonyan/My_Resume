@@ -1,0 +1,23 @@
+{% extends 'mysite/base.html' %}
+
+
+{% block content %}
+
+
+
+
+    <form method="post">
+        <h1 class='register-h1'>Регистрация</h1>
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button type="submit" class="btn btn-lg btn-primary">Регистрацияm</button>
+
+
+
+
+    </form>
+
+
+
+{% endblock %}

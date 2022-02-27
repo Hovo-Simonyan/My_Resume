@@ -1,0 +1,30 @@
+{% extends 'mysite/base.html' %}
+
+
+{% block content %}
+<div class="message-centr">
+    <h1>Добавить резюме</h1>
+</div>
+
+<form action="{% url 'add_resume' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-error">{{ form.non_field_errors }}</div>
+    <div class="form-resume">
+        {{ form.media }}
+        {% for f in form %}
+        <div class="input-name">
+            {% if f.label == 'Facebook-сылка' or f.label == 'Телефон' or f.label == 'Телеграм' %}
+            <label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: "не обязательно"</label>{{ f }}
+            <div class="form-error">{{ f.errors }}</div>
+            {% else %}
+            <label class="form-label" for="{{ f.id_for_label }}">{{f.label}}:</label>{{ f }}
+            <div class="form-error">{{ f.errors }}</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="button-succses our-button">
+        <button type="submit" class="btn btn-outline-success xz">Добавить</button>
+    </div>
+</form>
+{% endblock %}
