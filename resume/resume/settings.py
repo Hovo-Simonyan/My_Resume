@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-tu1zaexlk!p#sv^a@c%e(h#q*kj(v86^crw&+22v!mt1#zepf=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['HovoSimonyan.pythonanywhere.com']
 
 
 # Application definition
@@ -144,6 +144,7 @@ STATICFILES_DIRS = [
 
 INTERNAL_IPS = [
     "127.0.0.1",
+    'HovoSimonyan.pythonanywhere.com',
 ]
 # CKEDITOR_CONFIGS = {
 #     'default': {
